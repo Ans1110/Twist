@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
-import Home from "../pages/Home";
-import Popular from "../pages/Popular";
-import Search from "../pages/Search";
-import Cocktail from "../pages/Cocktail";
-import About from "../pages/About";
+import Home from "@/pages/Home";
+import Popular from "@/pages/Popular";
+import Search from "@/pages/Search";
+import Cocktail from "@/pages/Cocktail";
+import About from "@/pages/About";
 import NotFound from "@/pages/NotFound";
 import Error from "@/pages/Error";
 import RootLayout from "@/layout/RootLayout";

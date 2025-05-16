@@ -2,20 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Cocktail_API } from "../types";
 import Card from "./Card";
 import SkeletonCard from "./SkeletonCard";
+import { getDataList } from "../lib/utils";
 
 const Daily = () => {
   const { data, isPending } = useQuery({
     queryKey: ["daily"],
-    queryFn: async () => {
-      const responses = await Promise.all(
-        Array(8)
-          .fill(null)
-          .map(() =>
-            fetch(`${Cocktail_API}random.php`).then((res) => res.json())
-          )
-      );
-      return responses.map((res) => res.drinks[0]);
-    },
+    queryFn: () => getDataList(8, `${Cocktail_API}random.php`),
     refetchInterval: 24 * 60 * 60 * 1000,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
@@ -32,13 +24,13 @@ const Daily = () => {
         </div>
 
         {isPending ? (
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 w-[80%] mx-auto px-4 z-10">
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 w-[80%] mx-auto px-4 z-10">
             {Array.from({ length: 8 }, (_, index) => (
               <SkeletonCard key={index} />
             ))}
           </div>
         ) : (
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 w-[80%] mx-auto px-4 z-10">
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 w-[80%] mx-auto px-4 z-10">
             {data?.map((item, index) => (
               <div key={item.idDrink} className="w-52 h-64">
                 <Card

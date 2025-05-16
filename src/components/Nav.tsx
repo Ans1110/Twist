@@ -2,7 +2,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import Menu from "./icons/Menu";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Path, type MenuList } from "../types/type";
+import { Path, type MenuList } from "../types";
 
 const Nav = () => {
   const currentPath = useLocation().pathname;

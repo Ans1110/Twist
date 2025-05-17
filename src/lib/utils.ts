@@ -17,3 +17,14 @@ export const getDataList = async (amount: number, api: string) => {
     throw new Error(error as string);
   }
 };
+
+export const getDataById = async (id: string, api: string) => {
+  try {
+    const responses = await fetch(`${api}lookup.php?i=${id}`).then((res) =>
+      res.json()
+    );
+    return responses.drinks[0];
+  } catch (error) {
+    throw new Error(error as string);
+  }
+};

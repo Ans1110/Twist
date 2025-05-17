@@ -15,10 +15,10 @@ const Daily = () => {
   });
 
   return (
-    <div className="relative container mx-auto h-[82vh] overflow-hidden sm:backdrop-blur-sm sm:rounded-lg">
-      <div className="flex flex-col gap-5 items-center">
-        <div className="z-10 pt-2">
-          <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-300 font-[caveat] text-6xl ml-4 md:ml-0">
+    <div className="relative container mx-auto h-[80vh] overflow-hidden sm:backdrop-blur-sm sm:rounded-lg">
+      <div className="flex flex-col gap-1 items-center">
+        <div className="z-10 pt-2 text-6xl">
+          <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-300 font-[caveat] ml-4 md:ml-0 select-none w-fit h-20">
             Daily Pick &nbsp;
           </h1>
         </div>
@@ -34,6 +34,7 @@ const Daily = () => {
             {data?.map((item, index) => (
               <div key={item.idDrink} className="w-52 h-64">
                 <Card
+                  id={item.idDrink}
                   img={item.strDrinkThumb}
                   name={item.strDrink}
                   index={index}
@@ -54,6 +55,7 @@ const Daily = () => {
             {data?.slice(0, 2).map((item, index) => (
               <div key={item.idDrink} className="w-52 h-64">
                 <Card
+                  id={item.idDrink}
                   img={item.strDrinkThumb}
                   name={item.strDrink}
                   index={index}

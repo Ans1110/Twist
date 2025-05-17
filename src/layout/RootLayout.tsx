@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 
 const RootLayout = () => {
   return (
-    <div>
+    <div className="bg-[url(/src/assets/home.jpeg)] bg-cover bg-center bg-no-repeat  select-none w-screen h-screen overflow-hidden">
       <header>
         <Nav />
       </header>

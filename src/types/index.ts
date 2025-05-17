@@ -15,6 +15,7 @@ export type MenuList = {
 };
 
 export type CardProps = {
+  id: string;
   img: string;
   name: string;
   index: number;

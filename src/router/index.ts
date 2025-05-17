@@ -17,6 +17,13 @@ export const router = createBrowserRouter([
         path: "/",
         Component: Home,
         ErrorBoundary: Error,
+        children: [
+          {
+            path: "details/:id",
+            Component: Cocktail,
+            ErrorBoundary: Error,
+          },
+        ],
       },
       {
         path: "popular",
@@ -24,7 +31,7 @@ export const router = createBrowserRouter([
         ErrorBoundary: Error,
         children: [
           {
-            path: ":id",
+            path: "details/:id",
             Component: Cocktail,
             ErrorBoundary: Error,
           },
@@ -36,7 +43,7 @@ export const router = createBrowserRouter([
         ErrorBoundary: Error,
         children: [
           {
-            path: ":id",
+            path: "details/:id",
             Component: Cocktail,
             ErrorBoundary: Error,
           },

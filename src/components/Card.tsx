@@ -2,9 +2,9 @@ import { Link } from "react-router";
 import type { CardProps } from "../types";
 import { motion } from "framer-motion";
 
-const Card = ({ img, name, index }: CardProps) => {
+const Card = ({ id, img, name, index }: CardProps) => {
   return (
-    <Link to={`/details/${name}`}>
+    <Link to={`/details/${id}`}>
       <motion.div
         className="flex flex-col justify-center items-center gap-2 w-58 h-64 bg-white/10 backdrop-blur-lg rounded-lg box-border cursor-pointer hover:scale-105 transition-all duration-300"
         initial={{ opacity: 0 }}
@@ -16,7 +16,9 @@ const Card = ({ img, name, index }: CardProps) => {
           alt={name}
           className="select-none object-cover object-center w-48 h-52 rounded-2xl rounded-t-2xl pt-2 "
         />
-        <h2 className="text-amber-100 font-serif text-2xl">{name}</h2>
+        <h2 className="text-amber-100 font-serif text-2xl text-center">
+          {name}
+        </h2>
       </motion.div>
     </Link>
   );

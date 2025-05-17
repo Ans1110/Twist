@@ -5,6 +5,7 @@ import { Cocktail_API } from "../types";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import SkeletonCard from "../components/SkeletonCard";
+import { motion } from "framer-motion";
 
 const Cocktail = () => {
   const { id } = useParams();
@@ -24,7 +25,12 @@ const Cocktail = () => {
           </div>
         ) : (
           <div className="absolute w-2/5 h-full left-0 top-0">
-            <div className="flex flex-col items-center justify-center xl:gap-10 gap-5 w-[94%] md:w-[90%] xl:w-3/4 h-3/4 container mx-auto translate-y-1/5 bg-white/10 backdrop-blur-lg rounded-lg box-border ring-2 ring-white/20">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center justify-center xl:gap-10 gap-5 w-[94%] md:w-[90%] xl:w-3/4 h-3/4 container mx-auto translate-y-1/5 bg-white/10 backdrop-blur-lg rounded-lg box-border ring-2 ring-white/20"
+            >
               <img
                 className="w-48 md:w-60 h-48 md:h-60 object-cover rounded-2xl"
                 src={data?.strDrinkThumb}
@@ -33,7 +39,7 @@ const Cocktail = () => {
               <div className="bg-gradient-to-r from-rose-300 to-orange-300 bg-clip-text text-transparent font-[changa] text-6xl text-center">
                 <h1 className="">{data?.strDrink}</h1>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
         {/* right side */}
@@ -50,8 +56,16 @@ const Cocktail = () => {
             />
           </div>
         ) : (
-          <div className="absolute w-3/5 h-full right-0 top-0">
-            <div className="flex flex-col xl:gap-10 gap-5 items-center justify-center w-[80%] xl:w-2/3 h-full container mx-auto">
+          <div
+            className="absolute w-3/5 h-full right-0 top-0 overflow-y-auto"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col xl:gap-10 gap-5 items-center justify-start w-[80%] xl:w-2/3 h-auto min-h-full py-8 container mx-auto"
+            >
               <div className="bg-gradient-to-r from-orange-300 to-rose-500 bg-clip-text text-transparent font-[changa] text-6xl text-center">
                 <h2>Ingredients</h2>
               </div>
@@ -93,7 +107,7 @@ const Cocktail = () => {
               <p className="text-amber-200 font-serif text-2xl text-left w-[80%] xl:w-2/3 break-words md:break-normal">
                 {data?.strInstructions}
               </p>
-            </div>
+            </motion.div>
           </div>
         )}
       </div>
@@ -114,7 +128,12 @@ const Cocktail = () => {
               className="absolute top-78 left-1/2 transform -translate-x-1/2"
             />
           ) : (
-            <div className="flex flex-col items-center justify-evenly py-4 gap-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center justify-evenly py-4 gap-4"
+            >
               <div className="flex flex-row items-center justify-around gap-2 w-[90%]">
                 <img
                   className="w-30 h-30 object-cover rounded-2xl"
@@ -170,7 +189,7 @@ const Cocktail = () => {
                   {data?.strInstructions}
                 </p>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

@@ -134,7 +134,7 @@ const Cocktail = () => {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-evenly py-4 gap-4"
             >
-              <div className="flex flex-row items-center justify-around gap-2 w-[90%]">
+              <div className="flex flex-row items-center justify-evenly gap-2 w-[90%]">
                 <img
                   className="w-30 h-30 object-cover rounded-2xl"
                   src={data?.strDrinkThumb}

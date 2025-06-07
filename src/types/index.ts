@@ -20,3 +20,10 @@ export type CardProps = {
   name: string;
   index: number;
 };
+
+export interface CocktailData {
+  idDrink: string;
+  strDrink: string;
+  strDrinkThumb: string;
+  [key: string]: string | null;
+}

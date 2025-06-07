@@ -5,7 +5,7 @@ export const Path = {
   About: "/about",
 } as const;
 
-export const Cocktail_API = "https:www.thecocktaildb.com/api/json/v1/1/";
+export const Cocktail_API = "https://www.thecocktaildb.com/api/json/v1/1/";
 
 export type Path = (typeof Path)[keyof typeof Path];
 

@@ -171,18 +171,18 @@ const Cocktail = () => {
                           <p>
                             <span className="font-changa text-red-300">
                               {
-                                data?.[
+                                cocktailData?.[
                                   `strIngredient${
                                     index + 1
-                                  }` as keyof typeof data
+                                  }` as keyof typeof cocktailData
                                 ]
                               }
                             </span>
                             &nbsp;:&nbsp;
                             <span className="font-alata text-red-400">
                               {
-                                data?.[
-                                  `strMeasure${index + 1}` as keyof typeof data
+                                cocktailData?.[
+                                  `strMeasure${index + 1}` as keyof typeof cocktailData
                                 ]
                               }
                             </span>

@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import Home from "@/pages/Home";
-import Popular from "@/pages/Popular";
 import Search from "@/pages/Search";
 import Cocktail from "@/pages/Cocktail";
 import About from "@/pages/About";
@@ -19,19 +18,7 @@ export const router = createBrowserRouter([
         ErrorBoundary: Error,
         children: [
           {
-            path: "details/:id",
-            Component: Cocktail,
-            ErrorBoundary: Error,
-          },
-        ],
-      },
-      {
-        path: "popular",
-        Component: Popular,
-        ErrorBoundary: Error,
-        children: [
-          {
-            path: "details/:id",
+            path: "details/:name",
             Component: Cocktail,
             ErrorBoundary: Error,
           },
@@ -43,7 +30,7 @@ export const router = createBrowserRouter([
         ErrorBoundary: Error,
         children: [
           {
-            path: "details/:id",
+            path: "details/:name",
             Component: Cocktail,
             ErrorBoundary: Error,
           },

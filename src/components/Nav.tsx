@@ -14,10 +14,6 @@ const Nav = () => {
       name: "Home",
     },
     {
-      path: Path.Popular,
-      name: "Popular",
-    },
-    {
       path: Path.Search,
       name: "Search",
     },

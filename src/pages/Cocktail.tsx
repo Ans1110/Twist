@@ -1,4 +1,4 @@
-import { getDataById } from "@/lib/utils";
+import { getDataByName } from "@/lib/utils";
 import { useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Cocktail_API } from "../types";
@@ -8,11 +8,13 @@ import SkeletonCard from "../components/SkeletonCard";
 import { motion } from "framer-motion";
 
 const Cocktail = () => {
-  const { id } = useParams();
+  const { name } = useParams();
   const { data, isPending } = useQuery({
-    queryKey: ["cocktail", id],
-    queryFn: () => getDataById(id as string, Cocktail_API),
+    queryKey: ["cocktail", name],
+    queryFn: () => getDataByName(name as string, Cocktail_API),
   });
+
+  const cocktailData = data?.[0];
 
   return (
     <>
@@ -33,11 +35,11 @@ const Cocktail = () => {
             >
               <img
                 className="w-48 md:w-60 h-48 md:h-60 object-cover rounded-2xl"
-                src={data?.strDrinkThumb}
-                alt={data?.strDrink}
+                src={cocktailData?.strDrinkThumb}
+                alt={cocktailData?.strDrink}
               />
               <div className="bg-gradient-to-r from-rose-300 to-orange-300 bg-clip-text text-transparent font-[changa] text-6xl text-center">
-                <h1 className="">{data?.strDrink}</h1>
+                <h1 className="">{cocktailData?.strDrink}</h1>
               </div>
             </motion.div>
           </div>
@@ -72,7 +74,9 @@ const Cocktail = () => {
               <ul className="flex flex-col xl:gap-2 gap-1 text-left w-[80%] xl:w-2/3">
                 {Array.from({ length: 15 }, (_, index) => {
                   if (
-                    data?.[`strIngredient${index + 1}` as keyof typeof data]
+                    cocktailData?.[
+                      `strIngredient${index + 1}` as keyof typeof cocktailData
+                    ]
                   ) {
                     return (
                       <li
@@ -82,16 +86,20 @@ const Cocktail = () => {
                         <p>
                           <span className="font-changa text-red-300">
                             {
-                              data?.[
-                                `strIngredient${index + 1}` as keyof typeof data
+                              cocktailData?.[
+                                `strIngredient${
+                                  index + 1
+                                }` as keyof typeof cocktailData
                               ]
                             }
                           </span>
                           &nbsp;:&nbsp;
                           <span className="font-alata text-red-400">
                             {
-                              data?.[
-                                `strMeasure${index + 1}` as keyof typeof data
+                              cocktailData?.[
+                                `strMeasure${
+                                  index + 1
+                                }` as keyof typeof cocktailData
                               ]
                             }
                           </span>
@@ -105,7 +113,7 @@ const Cocktail = () => {
                 <h2>Instructions</h2>
               </div>
               <p className="text-amber-200 font-serif text-2xl text-left w-[80%] xl:w-2/3 break-words md:break-normal">
-                {data?.strInstructions}
+                {cocktailData?.strInstructions}
               </p>
             </motion.div>
           </div>
@@ -137,11 +145,11 @@ const Cocktail = () => {
               <div className="flex flex-row items-center justify-evenly gap-2 w-[90%]">
                 <img
                   className="w-30 h-30 object-cover rounded-2xl"
-                  src={data?.strDrinkThumb}
-                  alt={data?.strDrink}
+                  src={cocktailData?.strDrinkThumb}
+                  alt={cocktailData?.strDrink}
                 />
                 <div className="bg-gradient-to-r from-rose-300 to-orange-300 bg-clip-text text-transparent font-[changa] text-4xl text-center">
-                  <h1 className="">{data?.strDrink}</h1>
+                  <h1 className="">{cocktailData?.strDrink}</h1>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center gap-5 w-[90%]">
@@ -151,7 +159,9 @@ const Cocktail = () => {
                 <ul className="flex flex-col items-center justify-center gap-2">
                   {Array.from({ length: 15 }, (_, index) => {
                     if (
-                      data?.[`strIngredient${index + 1}` as keyof typeof data]
+                      cocktailData?.[
+                        `strIngredient${index + 1}` as keyof typeof cocktailData
+                      ]
                     ) {
                       return (
                         <li
@@ -186,7 +196,7 @@ const Cocktail = () => {
                   <h2>Instructions</h2>
                 </div>
                 <p className="text-amber-200 font-serif text-2xl text-center break-words">
-                  {data?.strInstructions}
+                  {cocktailData?.strInstructions}
                 </p>
               </div>
             </motion.div>

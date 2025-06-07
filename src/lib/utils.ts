@@ -28,3 +28,14 @@ export const getDataById = async (id: string, api: string) => {
     throw new Error(error as string);
   }
 };
+
+export const getDataByName = async (name: string, api: string) => {
+  try {
+    const responses = await fetch(`${api}search.php?s=${name}`).then((res) =>
+      res.json()
+    );
+    return responses.drinks;
+  } catch (error) {
+    throw new Error(error as string);
+  }
+};

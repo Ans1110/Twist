@@ -1,4 +1,4 @@
-export default function About() {
+const About = () => {
   return (
     <div className="py-16">
       <div className="container mx-auto px-4 max-w-4xl">
@@ -25,4 +25,6 @@ export default function About() {
       </div>
     </div>
   );
-}
+};
+
+export default About;

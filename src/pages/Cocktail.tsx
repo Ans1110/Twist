@@ -182,7 +182,9 @@ const Cocktail = () => {
                             <span className="font-alata text-red-400">
                               {
                                 cocktailData?.[
-                                  `strMeasure${index + 1}` as keyof typeof cocktailData
+                                  `strMeasure${
+                                    index + 1
+                                  }` as keyof typeof cocktailData
                                 ]
                               }
                             </span>

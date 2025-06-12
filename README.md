@@ -1,6 +1,6 @@
 # Twist - Cocktail Discovery App
 
-## 🍹 [Live Demo](https://twist-gamma.vercel.app/)
+## 🍹 [Live Demo](https://twist-kappa.vercel.app/)
 
 Twist is a modern web application for discovering and exploring cocktail recipes. Built with React, TypeScript, and TanStack Query, it offers a sleek interface for browsing cocktails and learning how to make them.
 

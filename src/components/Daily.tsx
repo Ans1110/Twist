@@ -24,13 +24,13 @@ const Daily = () => {
         </div>
 
         {isPending ? (
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 w-[80%] mx-auto px-4 z-10">
+          <div className="hidden sm:grid grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto px-4 z-10">
             {Array.from({ length: 8 }, (_, index) => (
               <SkeletonCard key={index} />
             ))}
           </div>
         ) : (
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 w-[80%] mx-auto px-4 z-10">
+          <div className="hidden sm:grid grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-[80%] mx-auto px-4 z-10">
             {data?.map((item, index) => (
               <div key={item.idDrink} className="w-52 h-64">
                 <Card

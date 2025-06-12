@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# Twist - Cocktail Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🍹 [Live Demo](https://twist-gamma.vercel.app/)
 
-Currently, two official plugins are available:
+Twist is a modern web application for discovering and exploring cocktail recipes. Built with React, TypeScript, and TanStack Query, it offers a sleek interface for browsing cocktails and learning how to make them.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Daily Picks**: Discover 8 random cocktails refreshed every 24 hours
+- **Detailed Recipes**: View comprehensive information about each cocktail, including ingredients and preparation instructions
+- **Search Functionality**: Find cocktails by name
+- **Responsive Design**: Optimized for both desktop and mobile devices (2 cocktails displayed on mobile)
+- **Beautiful UI**: Modern, clean interface with smooth animations and backdrop blur effects
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technology Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**: React 19 with TypeScript
+- **Routing**: React Router v7
+- **Data Fetching**: TanStack Query
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **API**: TheCocktailDB API
+- **Deployment**: Vercel
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Node.js (v16 or higher)
+- npm or bun
+
+
+## 📱 Application Structure
+
+- **Home Page**: Features the daily cocktail picks
+- **Search Page**: Allows users to search for cocktails by name
+- **Details View**: Shows detailed information about a specific cocktail
+- **About Page**: Information about the application
+
+## 🔄 API Integration
+
+Twist integrates with [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to fetch cocktail data, including:
+- Random cocktails for daily picks
+- Cocktail details by ID
+- Search functionality by cocktail name
+
+
+## 👨‍💻 Author
+
+- GitHub: [https://github.com/Ans1110](https://github.com/Ans1110)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

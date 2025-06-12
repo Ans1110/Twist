@@ -22,14 +22,6 @@ Twist is a modern web application for discovering and exploring cocktail recipes
 - **API**: TheCocktailDB API
 - **Deployment**: Vercel
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or bun
-
-
 ## 📱 Application Structure
 
 - **Home Page**: Features the daily cocktail picks
